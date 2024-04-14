@@ -1,0 +1,49 @@
+.notifications-container {
+  position: relative;
+}
+
+/* Style your button here */
+.notifications-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  height: 80px; /* Match the height of the navbar */
+}
+
+.notifications-icon img {
+  height: 70px; /* Adjust as needed */
+}
+
+.notifications-dropdown {
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 200px;
+  max-height: 233px; /* Adjust based on the height of 5 notification items */
+  overflow-y: auto; /* Enable vertical scrolling */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  opacity: 0; /* Start with the dropdown hidden */
+  visibility: hidden; /* Hide the dropdown */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for opacity and visibility */
+}
+
+.notifications-dropdown-visible {
+  opacity: 1; /* Make the dropdown visible */
+  visibility: visible; /* Show the dropdown */
+}
+
+.notification-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}

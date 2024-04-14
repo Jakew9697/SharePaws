@@ -1,0 +1,84 @@
+/* NavBar.css */
+.navbar {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #f8f9faad;
+  z-index: 1000;
+  width: 100%;
+  height: 80px;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  padding: 0 15px; /* Add padding to avoid elements touching the edges */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav.mx-auto {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.navbar-nav.mx-auto .nav-item {
+  margin-left: 132.5px; /* Adjust based on your layout */
+}
+
+.navbar-nav.ms-auto {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-item {
+  padding: 0 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .container-fluid {
+    flex-direction: row;
+    align-items: center; /* Center align the items for smaller screens */
+  }
+
+  .navbar-nav.mx-auto,
+  .navbar-nav.ms-auto {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .navbar-nav.mx-auto .nav-item {
+    margin-left: 0; /* Reset the margin for the create post icon */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Further adjustments for even smaller screens */
+  .navbar {
+    height: auto; /* Allow the navbar to grow in height */
+    flex-direction: row; /* Stack the elements vertically */
+  }
+
+  .container-fluid {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .navbar-nav.mx-auto,
+  .navbar-nav.ms-auto {
+    flex-direction: row; /* Stack the navbar items vertically */
+    align-items: center;
+    margin-top: 5px; /* Reduce spacing between items */
+  }
+}

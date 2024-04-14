@@ -1,0 +1,58 @@
+/* Home.css */
+
+.home {
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+  padding: 20px;
+}
+
+.post {
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+}
+
+.post-header {
+  padding: 10px;
+  background-color: rgba(247, 130, 12, 254);
+  /* 254 */
+}
+
+.post-image {
+  width: 100%;
+  display: block;
+}
+
+.post-caption {
+  padding: 12.6px;
+  padding-left: 10px;
+  padding-right: 5px;
+  background-color: rgb(255, 255, 255);
+  font-size: 12px;
+}
+
+.caption-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(
+    100% - 10px
+  ); /* Adjust based on the container width and padding */
+}
+
+.more {
+  display: inline;
+  cursor: pointer;
+  color: blue;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .home {
+    padding: 10px;
+  }
+}

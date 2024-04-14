@@ -1,0 +1,67 @@
+/* CreatePost.css */
+.create-post {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.create-post h2 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group textarea {
+  width: 95%;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+.form-group input[type="file"] {
+  display: block;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .create-post {
+    padding: 10px;
+  }
+
+  .form-group textarea {
+    padding: 8px;
+  }
+
+  button[type="submit"] {
+    padding: 8px;
+  }
+}
