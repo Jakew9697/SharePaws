@@ -4,20 +4,21 @@
   align-items: center;
   position: sticky;
   top: 0;
-  background-color: #f8f9faad;
+  background-color: #f8f9faad; /* Semi-transparent background */
   z-index: 1000;
   width: 100%;
   height: 80px;
 }
 
 .container-fluid {
+  position: relative; /* Needed for absolute positioning of the Add Post icon */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space elements evenly */
   align-items: center;
   max-width: 1200px;
-  margin: auto;
   width: 100%;
-  padding: 0 15px; /* Add padding to avoid elements touching the edges */
+  margin: 0 auto; /* Centers the container within the navbar */
+  padding: 0 20px; /* Increase padding to avoid elements touching the edges */
 }
 
 .navbar-brand {
@@ -25,60 +26,49 @@
   align-items: center;
 }
 
-.navbar-nav.mx-auto {
+.navbar-nav {
   display: flex;
-  justify-content: center;
-  flex-grow: 1;
+  align-items: center;
 }
 
-.navbar-nav.mx-auto .nav-item {
-  margin-left: 132.5px; /* Adjust based on your layout */
+.navbar-nav.mx-auto {
+  position: absolute; /* Absolutely position the Add Post icon */
+  left: 50%; /* Set to the middle of the container */
+  transform: translateX(-50%); /* Offset by half its width to center it */
+  z-index: 1050; /* Higher z-index to ensure it is clickable and visible */
 }
 
 .navbar-nav.ms-auto {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-end; /* Align elements to the right */
 }
 
 .nav-item {
-  padding: 0 8px;
+  padding: 0 15px; /* Uniform padding for all nav items */
 }
 
 /* Responsive adjustments */
 @media (max-width: 991px) {
-  .container-fluid {
-    flex-direction: row;
-    align-items: center; /* Center align the items for smaller screens */
-  }
-
   .navbar-nav.mx-auto,
   .navbar-nav.ms-auto {
-    width: 100%;
+    flex-direction: column;
+    position: static; /* Reset position for mobile views */
+    transform: none;
+    order: 2;
+    width: 100%; /* Full width for easier tap targets on mobile */
     justify-content: center;
-    margin-top: 10px;
   }
 
-  .navbar-nav.mx-auto .nav-item {
-    margin-left: 0; /* Reset the margin for the create post icon */
+  .navbar-brand {
+    order: 1;
+  }
+
+  .container-fluid {
+    flex-direction: column; /* Stack container contents vertically */
   }
 }
 
 @media (max-width: 768px) {
-  /* Further adjustments for even smaller screens */
   .navbar {
-    height: auto; /* Allow the navbar to grow in height */
-    flex-direction: row; /* Stack the elements vertically */
-  }
-
-  .container-fluid {
-    padding: 10px; /* Adjust padding for smaller screens */
-  }
-
-  .navbar-nav.mx-auto,
-  .navbar-nav.ms-auto {
-    flex-direction: row; /* Stack the navbar items vertically */
-    align-items: center;
-    margin-top: 5px; /* Reduce spacing between items */
+    flex-direction: column; /* Stack navbar contents vertically */
   }
 }

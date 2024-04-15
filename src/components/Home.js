@@ -5,21 +5,19 @@ function Home() {
   const [expandedCaptionId, setExpandedCaptionId] = useState(null);
   const [overflowingText, setOverflowingText] = useState({});
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const posts = [
-    // manual hardcoded post data for testing
     {
       id: 1,
       username: "user1",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbGdJcjT5haUn-NpRjRgcIHB3OhnoL8Yf6tQ&s",
+      image: "/images/JessAndJake.jpg",
       caption:
         "First post! First post!First post!First post!First post!First post!First post!First post!",
     },
     {
       id: 2,
       username: "user2",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1UNT6D9RL2bXUFsNE2v4o2DTOB2OvBSElDA&s",
+      image: "/images/WIN_20230413_19_46_08_Pro.mp4",
       caption: "Another post!",
     },
     {
@@ -89,6 +87,18 @@ function Home() {
     return () => window.removeEventListener("resize", checkOverflow);
   }, [posts]);
 
+  const renderMedia = (post) => {
+    const isVideo = post.image.endsWith(".mp4");
+    return isVideo ? (
+      <video controls className="post-image">
+        <source src={post.image} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    ) : (
+      <img src={post.image} alt={post.caption} className="post-image" />
+    );
+  };
+
   return (
     <div className="home">
       {posts.map((post) => (
@@ -96,7 +106,7 @@ function Home() {
           <div className="post-header">
             <strong>{post.username}</strong>
           </div>
-          <img src={post.image} alt={post.caption} className="post-image" />
+          {renderMedia(post)}
           <div className="post-caption">
             <span
               id={`caption-${post.id}`}

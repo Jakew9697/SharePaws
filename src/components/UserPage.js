@@ -15,14 +15,18 @@ function UserPage() {
       // Add more posts as needed
       { id: 1, imageUrl: "/images/SharePawsLogo.png", type: "image" },
       { id: 2, imageUrl: "/images/NotificationIcon.png", type: "image" },
-      { id: 3, imageUrl: "/images/SharePawsLogo.png", type: "image" },
+      { id: 3, imageUrl: "/images/JessAndJake.jpg", type: "image" },
       { id: 4, imageUrl: "/images/SharePawsLogo.png", type: "image" },
       { id: 5, imageUrl: "/images/SharePawsLogo.png", type: "image" },
       { id: 6, imageUrl: "/images/SharePawsLogo.png", type: "image" },
       { id: 7, imageUrl: "/images/SharePawsLogo.png", type: "image" },
       { id: 8, imageUrl: "/images/SharePawsLogo.png", type: "image" },
       { id: 9, imageUrl: "/images/SharePawsLogo.png", type: "image" },
-      { id: 10, imageUrl: "/videos/video1.mp4", type: "video" },
+      {
+        id: 10,
+        imageUrl: "/images/WIN_20230413_19_46_08_Pro.mp4",
+        type: "video",
+      },
     ],
     friends: 42, // Example number of friends
   };
@@ -49,9 +53,9 @@ function UserPage() {
         />
         <div className="bio">{limitedBio}</div>
       </div>
-      <div className="posts">
+      <div className="user-posts">
         {user.posts.map((post) => (
-          <div key={post.id} className="post">
+          <div key={post.id} className="user-post">
             {post.type === "image" ? (
               <img src={post.imageUrl} alt="Post" />
             ) : (
